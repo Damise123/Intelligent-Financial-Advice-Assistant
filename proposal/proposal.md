@@ -43,7 +43,7 @@ The assistant will have three parts. First, a command-line interface will collec
 | Oluwadamise Adeniran | Implement the calculations for the remaining savings target, monthly balance and amount needed each month. |
 | Darling Mota | Write the knowledge base, including rules for an achievable goal, a monthly shortfall and expenses exceeding income. |
 | not assigned | Implement forward chaining and record which rules led to each conclusion so the assistant can explain its answer. |
-| not assigned | Create test budgets with expected results, test the complete program and prepare examples for the live demo. |
+| Prosper Umeh | Create test budgets with expected results, test the complete program and prepare examples for the live demo. |
 
 ## Acknowledgements
 
