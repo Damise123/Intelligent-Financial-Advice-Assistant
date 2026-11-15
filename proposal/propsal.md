@@ -10,7 +10,7 @@ Group name: DTP
 | Darling Mota | C24486262 | @darlingmota |
 | Nischal Rana | [Number] | @NischalRana29 |
 | Prosper Umeh | [Number] | @Pruber |
-| Titas Utyra  | [Number] | @Titas3012 |
+| Titas Utyra  | C24448002 | @Titas3012 |
 
 ## Problem description
 
