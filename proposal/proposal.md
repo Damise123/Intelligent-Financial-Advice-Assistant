@@ -9,7 +9,7 @@ Group name: DTP
 | Oluwadamise Adeniran | C24528163 | @Damise123 |
 | Darling Mota | C24486262 | @darlingmota |
 | Nischal Rana | [Number] | @NischalRana29 |
-| Prosper Umeh | [Number] | @Pruber |
+| Prosper Umeh | C24365571 | @Pruber |
 | Titas Utyra  | C24448002 | @Titas3012 |
 
 ## Problem description
