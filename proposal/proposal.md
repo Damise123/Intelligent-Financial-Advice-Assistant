@@ -8,7 +8,7 @@ Group name: DTP
 | --- | --- | --- |
 | Oluwadamise Adeniran | C24528163 | @Damise123 |
 | Darling Mota | C24486262 | @darlingmota |
-| Nischal Rana | [Number] | @NischalRana29 |
+| Nischal Rana | C24392253 | @NischalRana29 |
 | Prosper Umeh | C24365571 | @Pruber |
 | Titas Utyra  | C24448002 | @Titas3012 |
 
@@ -58,7 +58,7 @@ flowchart TD
 | Oluwadamise Adeniran | Implement the calculations for the remaining savings target, monthly balance and amount needed each month. |
 | Darling Mota | Write the knowledge base, including rules for an achievable goal, a monthly shortfall and expenses exceeding income. |
 | not assigned | Implement forward chaining and record which rules led to each conclusion so the assistant can explain its answer. |
-| not assigned | Create test budgets with expected results, test the complete program and prepare examples for the live demo. |
+| Prosper Umeh | Create test budgets with expected results, test the complete program and prepare examples for the live demo. |
 
 ## Acknowledgements
 
