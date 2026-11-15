@@ -24,6 +24,8 @@ We will build a Python command-line assistant that assesses one savings goal at 
 
 We will use fictional budgets to test the assistant, including a case where the user has exactly enough to meet the deadline and one where their expenses exceed their income. Using manually entered figures keeps the project manageable and lets us focus on writing and testing the rules that explain each result.
 
+There are a few limitations we know about. The assistant only looks at one goal at a time and doesn't account for interest, inflation or changes in income. It won't connect to real bank data, so the advice is only as good as the figures the user types in. It's also a student project, so it's meant to help people think through a goal, not replace real financial advice.
+
 ## Proposed AI approach
 
 We will use a rule-based system with forward chaining. This approach suits our project because each recommendation can be traced back to the user’s budget and the rules that applied. The program will first calculate how much the user can save each month and how much they need to save to meet their deadline. These figures become the starting facts for the reasoning process.
@@ -34,6 +36,19 @@ For example, if a student can save €100 per month but needs €150, the first 
 
 The assistant will have three parts. First, a command-line interface will collect the user’s budget and savings goal. It will check that the amounts are valid and that the deadline is a positive number of months. Next, a calculation module will work out the remaining target, the monthly amount available to save and the amount needed each month. Finally, the reasoning module will apply the rules to those figures and record which rules led to its conclusion. The interface will display the result alongside the relevant figures so the user can see how the assistant reached its answer.
 
+```mermaid
+flowchart TD
+    A[User enters income, expenses, savings, target and deadline] --> B[CLI input validation]
+    B -->|invalid| A
+    B -->|valid| C[Calculation module: remaining target, monthly savings, amount needed per month]
+    C --> D[Starting facts]
+    D --> E[Reasoning module: forward chaining over the knowledge base]
+    KB[(Knowledge base rules: achievable, shortfall, expenses over income)] --> E
+    E --> F[Conclusion plus the rules that fired]
+    F --> G[CLI shows result, figures and explanation]
+    G -->|user changes one figure| A
+```
+
 
 ## Planned contributions
 
@@ -43,7 +58,7 @@ The assistant will have three parts. First, a command-line interface will collec
 | Oluwadamise Adeniran | Implement the calculations for the remaining savings target, monthly balance and amount needed each month. |
 | Darling Mota | Write the knowledge base, including rules for an achievable goal, a monthly shortfall and expenses exceeding income. |
 | not assigned | Implement forward chaining and record which rules led to each conclusion so the assistant can explain its answer. |
-| Prosper Umeh | Create test budgets with expected results, test the complete program and prepare examples for the live demo. |
+| not assigned | Create test budgets with expected results, test the complete program and prepare examples for the live demo. |
 
 ## Acknowledgements
 
