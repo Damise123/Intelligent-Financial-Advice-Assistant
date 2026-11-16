@@ -9,6 +9,7 @@ FIELDS = [
     ("deadline_months", "Deadline (whole months from now): ", "months"),
 ]
 
+
 def parse_amount(text):
     """Turn user text into a money amount, or raise ValueError with a reason."""
     cleaned = text.strip().replace("€", "").replace(",", "")
@@ -23,3 +24,17 @@ def parse_amount(text):
     if value < 0:
         raise ValueError("Amounts cannot be negative.")
     return round(value, 2)
+
+
+def parse_months(text):
+    """Turn user text into a deadline in whole months, or raise ValueError."""
+    cleaned = text.strip()
+    if cleaned == "":
+        raise ValueError("Please enter a value.")
+    try:
+        value = int(cleaned)
+    except ValueError:
+        raise ValueError("Please enter a whole number of months, for example 6.")
+    if value <= 0:
+        raise ValueError("The deadline must be at least 1 month.")
+    return value
