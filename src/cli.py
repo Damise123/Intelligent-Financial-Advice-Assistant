@@ -58,3 +58,15 @@ def collect_budget(input_func=input):
     """Ask for all six figures and return them as a dictionary."""
     print("\nEnter your monthly budget and savings goal.")
     return {key: ask(prompt, kind, input_func) for key, prompt, kind in FIELDS}
+
+
+def budget_warnings(budget):
+    """Point out unusual but valid inputs. These are not errors: the reasoning
+    engine still explains them, but the user may have made a typo."""
+    warnings = []
+    spending = budget["essential_expenses"] + budget["optional_spending"]
+    if spending > budget["income"]:
+        warnings.append("Your spending is higher than your income.")
+    if budget["current_savings"] >= budget["target"]:
+        warnings.append("Your current savings already cover the target.")
+    return warnings
