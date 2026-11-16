@@ -70,3 +70,21 @@ def budget_warnings(budget):
     if budget["current_savings"] >= budget["target"]:
         warnings.append("Your current savings already cover the target.")
     return warnings
+
+
+# Showing the result 
+
+def show_result(budget, facts, result):
+    """Print the figures, the conclusion and the explanation."""
+    print("\n========== Assessment ==========")
+    print(f"Target:                 EUR {budget['target']:.2f}")
+    print(f"Still to save:          EUR {facts['remaining_target']:.2f}")
+    print(f"You can save per month: EUR {facts['monthly_savings']:.2f}")
+    print(f"Needed per month:       EUR {facts['needed_per_month']:.2f}")
+    print(f"Deadline:               {budget['deadline_months']} months")
+    print(f"\nConclusion: {result['conclusion']}")
+    print("\nWhy: these rules fired:")
+    for rule in result["rules_fired"]:
+        print(f"  - {rule}")
+    print("================================")
+
