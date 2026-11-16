@@ -105,3 +105,25 @@ def assess(budget):
     facts = calculate(budget)
     result = run_reasoning(facts)
     show_result(budget, facts, result)
+
+
+def main(input_func=input):
+    """Run the assistant until the user quits."""
+    print("Intelligent Financial Advice Assistant")
+    budget = collect_budget(input_func)
+    assess(budget)
+    while True:
+        print("\n[c] change one figure   [n] new assessment   [q] quit")
+        choice = input_func("Choose an option: ").strip().lower()
+        if choice == "c":
+            key, prompt, kind = choose_field(input_func)
+            budget[key] = ask(prompt, kind, input_func)
+            assess(budget)
+        elif choice == "n":
+            budget = collect_budget(input_func)
+            assess(budget)
+        elif choice == "q":
+            print("Goodbye.")
+            return
+        else:
+            print("  Invalid input: type c, n or q.")
