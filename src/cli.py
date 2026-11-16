@@ -38,3 +38,6 @@ def parse_months(text):
     if value <= 0:
         raise ValueError("The deadline must be at least 1 month.")
     return value
+
+
+PARSERS = {"amount": parse_amount, "months": parse_months}
