@@ -53,3 +53,8 @@ def ask(prompt, kind, input_func=input):
             return parser(input_func(prompt))
         except ValueError as error:
             print(f"  Invalid input: {error}")
+
+def collect_budget(input_func=input):
+    """Ask for all six figures and return them as a dictionary."""
+    print("\nEnter your monthly budget and savings goal.")
+    return {key: ask(prompt, kind, input_func) for key, prompt, kind in FIELDS}
