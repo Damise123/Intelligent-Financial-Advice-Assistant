@@ -41,3 +41,15 @@ def parse_months(text):
 
 
 PARSERS = {"amount": parse_amount, "months": parse_months}
+
+
+# Asking the user
+
+def ask(prompt, kind, input_func=input):
+    """Keep asking until the user gives a valid value, then return it."""
+    parser = PARSERS[kind]
+    while True:
+        try:
+            return parser(input_func(prompt))
+        except ValueError as error:
+            print(f"  Invalid input: {error}")
