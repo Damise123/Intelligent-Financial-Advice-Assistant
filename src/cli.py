@@ -88,3 +88,11 @@ def show_result(budget, facts, result):
         print(f"  - {rule}")
     print("================================")
 
+
+def assess(budget):
+    """Connect the modules: budget -> calculations -> reasoning -> display."""
+    for warning in budget_warnings(budget):
+        print(f"  Note: {warning}")
+    facts = calculate(budget)
+    result = run_reasoning(facts)
+    show_result(budget, facts, result)
