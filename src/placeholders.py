@@ -7,4 +7,9 @@ def calculate(budget):
     )
 remaining_target = max(budget["target"] - budget["current_savings"], 0)
 needed_per_month = remaining_target / budget["deadline_months"]
+return {
+        "monthly_savings": monthly_savings,
+        "remaining_target": remaining_target,
+        "needed_per_month": needed_per_month,
+    }
 
