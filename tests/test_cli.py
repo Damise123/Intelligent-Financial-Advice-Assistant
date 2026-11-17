@@ -51,3 +51,5 @@ def test_ask_keeps_asking_until_input_is_valid(capsys):
 # warnings 
 
 def test_warns_when_spending_exceeds_income():
+    budget = {"income": 800, "essential_expenses": 700, "optional_spending": 200,
+              "current_savings": 0, "target": 600, "deadline_months": 4}
