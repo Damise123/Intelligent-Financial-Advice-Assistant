@@ -22,3 +22,9 @@ def run_reasoning(facts):
             "rules_fired": ["R0: current savings cover the target"],
         }
     if facts["monthly_savings"] <= 0:
+      return {
+            "conclusion": (
+                "Your expenses use up all of your income, so extending the "
+                "deadline alone will not help. You need to cut spending or "
+                "increase income."
+            ),
