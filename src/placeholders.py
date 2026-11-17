@@ -3,6 +3,8 @@ import math
 
 
 
+
+
 def calculate(budget):
   """Work out the starting figures the reasoning engine needs."""
     monthly_savings = (
@@ -15,6 +17,8 @@ return {
         "remaining_target": remaining_target,
         "needed_per_month": needed_per_month,
     }
+
+
 
 
 
@@ -36,6 +40,14 @@ def run_reasoning(facts):
             ),
         "rules_fired": ["R3: expenses are greater than or equal to income"],
         }
+    if facts["monthly_savings"] >= facts["needed_per_month"]:
+        return {
+            "conclusion": "Your goal is achievable by the deadline.",
+            "rules_fired": ["R1: monthly savings cover the amount needed"],
+        }
+
+
+
 
 
 
