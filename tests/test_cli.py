@@ -65,6 +65,8 @@ def test_no_warnings_for_normal_budget():
 # full run 
 
 def test_full_run_laptop_example(capsys):
+    # The laptop example from the proposal: EUR 100 left per month,
+    # EUR 600 goal in 4 months, then extend the deadline to 6 months.
 
 
 
