@@ -14,3 +14,9 @@ from src.cli import ask, budget_warnings, main, parse_amount, parse_months
 ])
 def test_parse_amount_accepts_valid_amounts(text, expected):
     assert parse_amount(text) == expected
+
+
+@pytest.mark.parametrize("text", ["", "   ", "abc", "-50", "nan", "inf"])
+def test_parse_amount_rejects_invalid_amounts(text):
+    with pytest.raises(ValueError):
+        parse_amount(text)
