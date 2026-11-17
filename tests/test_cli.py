@@ -20,3 +20,12 @@ def test_parse_amount_accepts_valid_amounts(text, expected):
 def test_parse_amount_rejects_invalid_amounts(text):
     with pytest.raises(ValueError):
         parse_amount(text)
+
+
+# parse_months 
+
+@pytest.mark.parametrize("text, expected", [("1", 1), ("6", 6), (" 12 ", 12)])
+def test_parse_months_accepts_positive_whole_numbers(text, expected):
+    assert parse_months(text) == expected
+
+
