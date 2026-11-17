@@ -5,3 +5,4 @@ def calculate(budget):
     monthly_savings = (
         budget["income"] - budget["essential_expenses"] - budget["optional_spending"]
     )
+remaining_target = max(budget["target"] - budget["current_savings"], 0)
