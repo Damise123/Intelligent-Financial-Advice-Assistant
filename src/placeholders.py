@@ -38,6 +38,8 @@ def run_reasoning(facts):
             "rules_fired": ["R1: monthly savings cover the amount needed"],
         }
     shortfall = facts["needed_per_month"] - facts["monthly_savings"]
+    months = math.ceil(facts["remaining_target"] / facts["monthly_savings"])
+
 
 
 
