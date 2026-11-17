@@ -70,6 +70,8 @@ def test_full_run_laptop_example(capsys):
     answers = ["1000", "700", "200", "0", "600", "4",  # first assessment
                "c", "6", "6",                          # change deadline to 6
                "q"]
+    main(fake_input(answers))
+
 
 
 
