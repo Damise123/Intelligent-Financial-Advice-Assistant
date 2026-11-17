@@ -55,3 +55,5 @@ def test_warns_when_spending_exceeds_income():
               "current_savings": 0, "target": 600, "deadline_months": 4}
     assert "Your spending is higher than your income." in budget_warnings(budget)
 
+
+def test_no_warnings_for_normal_budget():
