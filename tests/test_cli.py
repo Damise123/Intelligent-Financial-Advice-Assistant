@@ -49,3 +49,5 @@ def test_ask_keeps_asking_until_input_is_valid(capsys):
 
     
 # warnings 
+
+def test_warns_when_spending_exceeds_income():
