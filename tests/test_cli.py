@@ -64,5 +64,7 @@ def test_no_warnings_for_normal_budget():
 
 # full run 
 
+def test_full_run_laptop_example(capsys):
+
 
 
