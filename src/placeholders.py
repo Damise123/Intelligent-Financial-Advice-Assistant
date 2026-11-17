@@ -1,7 +1,6 @@
 import math
 
 
-
 def calculate(budget):
   """Work out the starting figures the reasoning engine needs."""
     monthly_savings = (
@@ -14,8 +13,6 @@ return {
         "remaining_target": remaining_target,
         "needed_per_month": needed_per_month,
     }
-
-
 
 
 
@@ -52,12 +49,3 @@ def run_reasoning(facts):
             "R4: suggest a longer deadline based on current savings rate",
         ],
     }
-
-
-
-
-
-
-
-
-
