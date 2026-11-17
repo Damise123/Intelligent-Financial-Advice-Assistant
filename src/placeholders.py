@@ -21,3 +21,4 @@ def run_reasoning(facts):
             "conclusion": "You already have enough saved for this goal.",
             "rules_fired": ["R0: current savings cover the target"],
         }
+    if facts["monthly_savings"] <= 0:
