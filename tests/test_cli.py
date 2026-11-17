@@ -29,3 +29,8 @@ def test_parse_months_accepts_positive_whole_numbers(text, expected):
     assert parse_months(text) == expected
 
 
+@pytest.mark.parametrize("text", ["", "0", "-3", "2.5", "six"])
+def test_parse_months_rejects_invalid_deadlines(text):
+    with pytest.raises(ValueError):
+        parse_months(text)
+
