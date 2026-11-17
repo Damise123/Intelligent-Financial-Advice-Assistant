@@ -17,4 +17,7 @@ return {
 def run_reasoning(facts):
    """Return a conclusion and the rules that led to it (simplified rules)."""
     if facts["remaining_target"] == 0:
-
+      return {
+            "conclusion": "You already have enough saved for this goal.",
+            "rules_fired": ["R0: current savings cover the target"],
+        }
