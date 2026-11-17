@@ -12,3 +12,5 @@ from src.cli import ask, budget_warnings, main, parse_amount, parse_months
     ("1,200", 1200.0),
     ("0", 0.0),
 ])
+def test_parse_amount_accepts_valid_amounts(text, expected):
+    assert parse_amount(text) == expected
