@@ -71,6 +71,7 @@ def test_full_run_laptop_example(capsys):
                "c", "6", "6",                          # change deadline to 6
                "q"]
     main(fake_input(answers))
+    out = capsys.readouterr().out
 
 
 
