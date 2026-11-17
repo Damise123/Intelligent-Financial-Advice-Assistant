@@ -15,4 +15,6 @@ return {
 
 
 def run_reasoning(facts):
+   """Return a conclusion and the rules that led to it (simplified rules)."""
+    if facts["remaining_target"] == 0:
 
