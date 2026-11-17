@@ -1,6 +1,7 @@
 import math
 
 
+
 def calculate(budget):
   """Work out the starting figures the reasoning engine needs."""
     monthly_savings = (
@@ -13,6 +14,8 @@ return {
         "remaining_target": remaining_target,
         "needed_per_month": needed_per_month,
     }
+
+
 
 
 
@@ -44,6 +47,11 @@ def run_reasoning(facts):
             f"You are short by EUR {shortfall:.2f} per month. At your current "
             f"rate you would reach the goal in {months} months."
         ),
+       "rules_fired": [
+            "R2: monthly shortfall identified",
+            "R4: suggest a longer deadline based on current savings rate",
+        ],
+    }
 
 
 
