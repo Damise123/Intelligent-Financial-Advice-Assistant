@@ -43,4 +43,6 @@ def fake_input(answers):
 
 
 def test_ask_keeps_asking_until_input_is_valid(capsys):
+    value = ask("Income: ", "amount", fake_input(["abc", "-5", "300"]))
+
     
