@@ -34,3 +34,9 @@ def test_parse_months_rejects_invalid_deadlines(text):
     with pytest.raises(ValueError):
         parse_months(text)
 
+
+# ask: re-prompting 
+
+def fake_input(answers):
+    answers = iter(answers)
+    return lambda prompt="": next(answers)
