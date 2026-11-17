@@ -13,3 +13,6 @@ return {
         "needed_per_month": needed_per_month,
     }
 
+
+def run_reasoning(facts):
+
