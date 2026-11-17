@@ -39,6 +39,11 @@ def run_reasoning(facts):
         }
     shortfall = facts["needed_per_month"] - facts["monthly_savings"]
     months = math.ceil(facts["remaining_target"] / facts["monthly_savings"])
+    return {
+        "conclusion": (
+            f"You are short by EUR {shortfall:.2f} per month. At your current "
+            f"rate you would reach the goal in {months} months."
+        ),
 
 
 
