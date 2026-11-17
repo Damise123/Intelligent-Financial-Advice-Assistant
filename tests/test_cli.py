@@ -61,3 +61,8 @@ def test_no_warnings_for_normal_budget():
               "current_savings": 0, "target": 600, "deadline_months": 4}
     assert budget_warnings(budget) == []
 
+
+# full run 
+
+
+
