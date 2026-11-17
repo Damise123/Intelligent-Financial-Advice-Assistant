@@ -72,6 +72,8 @@ def test_full_run_laptop_example(capsys):
                "q"]
     main(fake_input(answers))
     out = capsys.readouterr().out
+    assert "short by EUR 50.00 per month" in out
+
 
 
 
