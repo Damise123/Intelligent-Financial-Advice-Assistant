@@ -1,4 +1,5 @@
-from src.placeholders import calculate, run_reasoning
+from src.Calculations import calculate
+from src.placeholders import run_reasoning
 
 FIELDS = [
     ("income", "Monthly income (EUR): ", "amount"),
