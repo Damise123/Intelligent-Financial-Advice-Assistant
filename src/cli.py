@@ -98,15 +98,6 @@ def assess(budget):
     show_result(budget, facts, result)
 
 
-def assess(budget):
-    """Connect the modules: budget -> calculations -> reasoning -> display."""
-    for warning in budget_warnings(budget):
-        print(f"  Note: {warning}")
-    facts = calculate(budget)
-    result = run_reasoning(facts)
-    show_result(budget, facts, result)
-
-
 def main(input_func=input):
     """Run the assistant until the user quits."""
     print("Intelligent Financial Advice Assistant")
