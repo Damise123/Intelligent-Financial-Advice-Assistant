@@ -98,6 +98,7 @@ def assess(budget):
     result = run_reasoning(facts)
     show_result(budget, facts, result)
 
+
 def choose_field(input_func=input):
     """Show a numbered list of inputs and return the one the user picks."""
     print("\nWhich figure do you want to change?")
