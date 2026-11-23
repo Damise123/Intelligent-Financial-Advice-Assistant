@@ -104,6 +104,10 @@ def choose_field(input_func=input):
     for number, (_, prompt, _) in enumerate(FIELDS, start=1):
         print(f"  {number}. {prompt.rstrip(': ')}")
     while True:
+        choice = input_func("Enter a number: ").strip()
+        if choice.isdigit() and 1 <= int(choice) <= len(FIELDS):
+            return FIELDS[int(choice) - 1]
+        print(f"  Invalid input: choose a number from 1 to {len(FIELDS)}.")
 
 
 def main(input_func=input):
