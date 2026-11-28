@@ -54,15 +54,3 @@ r4 = Rule(
                       f"{math.ceil(f['remaining_target'] / f['monthly_savings'])} months.",
     },
 )
-
-# quick test using the example from the proposal run with: python -m src.knowledge_base
-RULES = [r0, r3, r1, r2, r4]
-
-if __name__ == "__main__":
-    from src.inference_engine import forward_chain, describe_firing
-
-    facts = {"remaining_target": 600, "monthly_savings": 100, "needed_per_month": 150}
-    result = forward_chain(facts, RULES)
-    print(result.facts["conclusion"])
-    for firing in result.trace:
-        print(describe_firing(firing))
