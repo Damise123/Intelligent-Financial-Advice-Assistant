@@ -23,3 +23,12 @@ r3 = Rule(
                       "alone will not help. You need to cut spending or increase income."
     },
 )
+# If you save at least whats needed each month, then the goal is achievable
+r1 = Rule(
+    name="R1",
+    description="Monthly savings cover the amount needed",
+    premises=["monthly_savings", "needed_per_month"],
+    condition=lambda f: f["monthly_savings"] > 0
+    and f["monthly_savings"] >= f["needed_per_month"],
+    conclude=lambda f: {"conclusion": "Your goal is achievable by the deadline."},
+)
