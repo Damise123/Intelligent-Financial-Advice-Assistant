@@ -54,3 +54,6 @@ r4 = Rule(
                       f"{math.ceil(f['remaining_target'] / f['monthly_savings'])} months.",
     },
 )
+
+# order matters the engine checks rules top to bottom
+RULES = [r0, r3, r1, r2, r4]
