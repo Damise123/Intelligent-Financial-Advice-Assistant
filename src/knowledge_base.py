@@ -32,3 +32,13 @@ r1 = Rule(
     and f["monthly_savings"] >= f["needed_per_month"],
     conclude=lambda f: {"conclusion": "Your goal is achievable by the deadline."},
 )
+
+# If you save something each month but less than you need then shortfall shows how much you're short each month
+r2 = Rule(
+    name="R2",
+    description="Monthly shortfall identified",
+    premises=["monthly_savings", "needed_per_month"],
+    condition=lambda f: 0 < f["monthly_savings"] < f["needed_per_month"],
+    conclude=lambda f: {"shortfall": f["needed_per_month"] - f["monthly_savings"]},
+)
+
