@@ -42,3 +42,18 @@ r2 = Rule(
     conclude=lambda f: {"shortfall": f["needed_per_month"] - f["monthly_savings"]},
 )
 
+# uses the shortfall from R2 to work out how many months the goal would take at the current rate
+r4 = Rule(
+    name="R4",
+    description="Suggest a longer deadline based on current savings rate",
+    premises=["shortfall", "monthly_savings", "remaining_target"],
+    conclude=lambda f: {
+        "suggested_months": math.ceil(f["remaining_target"] / f["monthly_savings"]),
+        "conclusion": f"You are short by EUR {f['shortfall']:.2f} per month. "
+                      f"At your current rate you would reach the goal in "
+                      f"{math.ceil(f['remaining_target'] / f['monthly_savings'])} months.",
+    },
+)
+
+
+RULES = [r0, r3, r1, r2, r4]
